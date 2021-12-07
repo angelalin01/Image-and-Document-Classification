@@ -1,0 +1,12 @@
+---
+:id: 58931120
+:submitters:
+- :name: Angela Lin
+  :email: angela5@seas.upenn.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2020-12-10 05:02:36.447854000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2020-12-09 21:02:36.447854000 Z
+:status: processed
+:score: 50.0
