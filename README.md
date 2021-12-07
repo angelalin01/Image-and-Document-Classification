@@ -20,18 +20,18 @@ See experiment graphs in folder.
 ###
 The dataset used for the experiments is be a sentiment analysis dataset from IMDb. Each document is a review of a movie and has been labeled as either a positive or negative review. 
 
-Representations We will use fd(v) to denote the value for feature v and document d. The three ways that you should represent each document (and the corresponding Python
+Representations We will use fd(v) to denote the value for feature v and document d. The three ways that I represent each document (and the corresponding Python
 functions to implement) are described below.
-Note that we have already implemented the first two, (1) Binary Bag-of-Words and (2)
-Count Bag-of-Words for you. It is up to you to implement TF-IDF.
-1. Binary Bag-of-Words Each document should be represented with binary features, one for each token in the vocabulary.
-􏰄1 ifv∈d
-fd(v) = 0 otherwise (1)
-Since you are using a sparse representation, you do not need to remember which tokens are not present in each document, only those which are present.
-2. Count Bag-of-Words Instead of having a binary feature for each token, you should keep count of how many times the token appears in the document, a quantity known as term frequency and denoted tf(d,v).
-fd(v) = tf(d,v) (2)
-3. TF-IDF Model The final representation will use the TF-IDF score of each token. The TF-IDF score combines how frequently the word appears in the document as well as how infrequently that word appears in the document collection as a whole. First, the inverse document frequency (IDF) of a token is defined as
- 2.3
-idf(v) = log |D| (3) |{d : v ∈ d, d ∈ D}|
+
+
+1. Binary Bag-of-Words: Each document should be represented with binary features, one for each token in the vocabulary.
+
+
+2. Count Bag-of-Words: Instead of having a binary feature for each token, I keep count of how many times the token appears in the document, a quantity known as term frequency and denoted tf(d,v).
+fd(v) = tf(d,v) 
+
+3. TF-IDF ModelL The final representation will use the TF-IDF score of each token. The TF-IDF score combines how frequently the word appears in the document as well as how infrequently that word appears in the document collection as a whole. First, the inverse document frequency (IDF) of a token is defined as
+$$idf(v) = log \frac{log |D| }{|{d : v ∈ d, d ∈ D}|})$$
+
 Here, D is the set of documents6 and the denominator is the number of documents that the token v appears in. Use the numpy.log() function to compute the log. Then, the TF-IDF feature you should use is
 fd(v) = tf(d, v) × idf(v) (4
