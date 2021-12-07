@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 # Multi-Class Image Classification and Naive Bayes Document Classification
 
 ## Image Classification
@@ -31,8 +31,9 @@ functions to implement) are described below.
 2. Count Bag-of-Words: Instead of having a binary feature for each token, I keep count of how many times the token appears in the document, a quantity known as term frequency and denoted tf(d,v).
 fd(v) = tf(d,v) 
 
-3. TF-IDF ModelL The final representation will use the TF-IDF score of each token. The TF-IDF score combines how frequently the word appears in the document as well as how infrequently that word appears in the document collection as a whole. First, the inverse document frequency (IDF) of a token is defined as
-$$idf(v) = log \frac{log |D| }{|{d : v ∈ d, d ∈ D}|})$$
+3. TF-IDF Model: The final representation will use the TF-IDF score of each token. The TF-IDF score combines how frequently the word appears in the document as well as how infrequently that word appears in the document collection as a whole. First, the inverse document frequency (IDF) of a token is defined as
+idf(v) = log |D| / |{d : v ∈ d, d ∈ D}|
 
-Here, D is the set of documents6 and the denominator is the number of documents that the token v appears in. Use the numpy.log() function to compute the log. Then, the TF-IDF feature you should use is
-fd(v) = tf(d, v) × idf(v) (4
+Here, D is the set of documents6 and the denominator is the number of documents that the token v appears in. 
+Then, the TF-IDF feature used is:
+fd(v) = tf(d, v) × idf(v) 
